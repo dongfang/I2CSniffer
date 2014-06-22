@@ -26,7 +26,7 @@
 	volatile uint8_t data[OUTBUFSIZ];
 };
 
-volatile static struct UART_INBUFFER outbuffer;
+volatile static struct UART_OUTBUFFER outbuffer;
 
 int uart_putchar(char c, FILE *stream) {
 	uint8_t next = (outbuffer.head+1) & OUTMASK;
